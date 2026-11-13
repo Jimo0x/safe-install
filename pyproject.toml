@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safe-install"
+version = "0.1.0"
+description = "Analyse un paquet npm ou PyPI avant de l'installer : typosquatting, scripts d'installation, code suspect."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Julio Dahou"}]
+keywords = ["security", "supply-chain", "npm", "pypi", "malware", "typosquatting"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+  "Environment :: Console",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+safe-install = "safe_install.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Jimo0x/safe-install"
+
+[tool.setuptools]
+packages = ["safe_install"]
